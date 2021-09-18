@@ -3,6 +3,7 @@ const keys = document.querySelectorAll(".key")
 
 // play notes
 function playNote(event) {
+    console.log(event.type)
     // keyCode
     // typed or pressed key
     // if key exist
@@ -10,6 +11,9 @@ function playNote(event) {
 }
 
 // click with mouse
+keys.forEach(function(key) {
+    window.addEventListener("click", playNote)
+})
 
 // keyboard type
 window.addEventListener("keydown", playNote)
