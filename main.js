@@ -3,11 +3,23 @@ const keys = document.querySelectorAll(".key")
 
 // play notes
 function playNote(event) {
-    console.log(event.type)
+    
     // keyCode
+    let audioKeyCode = getKeyCode()
     // typed or pressed key
     // if key exist
     // play audio
+}
+
+function getKeyCode(event) {
+    let keyCode;
+
+    const isKeyBoard = event.type === "keydown"
+    if(isKeyBoard){
+        keyCode = event.keyCode
+    } else {
+        keyCode = event.target.dataset.key
+    }
 }
 
 // click with mouse
