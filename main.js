@@ -5,9 +5,19 @@ const keys = document.querySelectorAll(".key")
 function playNote(event) {
     
     // keyCode
-    let audioKeyCode = getKeyCode()
+    let audioKeyCode = getKeyCode(event);
+
     // typed or pressed key
+    const key = document.querySelector(`[data-key="${audioKeyCode}"]`)
+    console.log(key)
+
     // if key exist
+    const isKeyExists = key;
+
+    if(!isKeyExists) {
+        return;
+    }
+
     // play audio
 }
 
@@ -20,6 +30,7 @@ function getKeyCode(event) {
     } else {
         keyCode = event.target.dataset.key
     }
+    return keyCode;
 }
 
 // click with mouse
